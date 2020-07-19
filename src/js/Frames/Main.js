@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { withRouter } from 'react-router'
 import { Route, Switch, Redirect } from 'react-router'
 import Home from './Home'
+import Projects from './Projects'
+import Blog from './Blog'
 import Header from '../Components/Header'
 
 
@@ -27,6 +29,8 @@ const Main = (props) => {
             <Header />
             <Switch>
                 <Route exact path='/' component={Home} />
+                <Route exact path='/projects' component={Projects} />
+                <Route exact path='/blog' component={Blog} />
             </Switch>
         </Wrapper>
     )
