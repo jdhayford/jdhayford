@@ -34,6 +34,9 @@ const Option = styled.div`
   transition: background 0.15s ease-in-out;
   border-radius: 0.5rem;
   
+  :hover {
+    color: rgba(51, 51, 51, 0.46);
+  }
 
   ${props => props.selected && css`
     color: #e2ebf1;
@@ -41,13 +44,11 @@ const Option = styled.div`
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
 
     :hover {
+      color: #e2ebf1;
       background-color: rgba(51, 51, 51, 0.26);
     }
   `};
 
-  :hover {
-    color: rgba(51, 51, 51, 0.46);
-  }
 `
 
 const Row = styled.div`
