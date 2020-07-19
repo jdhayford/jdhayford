@@ -19,8 +19,7 @@ const HeaderWrapper = styled.div`
 
 const Option = styled.div`
   flex: 1;
-  ${'' /* color: ${props => props.selected ? '#3a3b3c' : '#aadfef'}; */}
-  color: #3a3b3c;
+  color: rgba(51,51,51,0.64);
   font-size: 1.75rem;
   text-align: center;
   padding: 0.5rem;
