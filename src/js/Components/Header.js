@@ -17,11 +17,6 @@ const HeaderWrapper = styled.div`
   }
 `
 
-const HeaderLogo = styled.img`
-  width: 1.75rem;
-  cursor: pointer;
-  margin: 0.25rem 0.5rem;
-`
 const Option = styled.div`
   flex: 1;
   ${'' /* color: ${props => props.selected ? '#3a3b3c' : '#aadfef'}; */}
@@ -31,21 +26,22 @@ const Option = styled.div`
   padding: 0.5rem;
   cursor: pointer;
 
-  transition: background 0.15s ease-in-out;
+  ${'' /* transition: background 0.25s ease-in-out; */}
+  ${'' /* transition: box-shadow 0.25s ease-in-out; */}
   border-radius: 0.5rem;
   
   :hover {
-    color: rgba(51, 51, 51, 0.46);
+    color: rgba(51, 51, 51, 0.64);
   }
 
   ${props => props.selected && css`
-    color: #e2ebf1;
-    background: rgba(51,51,51,0.46);
+    color: #f3faff;
+    background: rgba(51,51,51,0.64);
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
-
+    transition: all 0.2s ease-in-out;
     :hover {
-      color: #e2ebf1;
-      background-color: rgba(51, 51, 51, 0.26);
+      color: #f3faff;
+      background-color: rgba(51, 51, 51, 0.54);
     }
   `};
 

@@ -34,7 +34,7 @@ const AvatarSubtitle = styled.div`
 `
 
 const MeSpan = styled.span`
-    color: #5bfc98;
+    color: #5EFCE8;
     font-weight: 800;
 `
 
@@ -45,8 +45,8 @@ const MainSection = styled.div`
     margin-top: 2rem;
     padding: 2rem;
     font-size: 1.5rem;
-    color: #e2ebf1;
-    background: rgba(51,51,51,0.46);
+    color: #f3faff;
+    background: rgba(51,51,51,0.64);
     border-radius: 0.5rem;
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
 
