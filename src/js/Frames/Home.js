@@ -68,6 +68,11 @@ const Links = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 2rem;
+  align-self: flex-end;
+
+  @media only screen and (max-width: 700px) {
+    align-self: center;
+  }
 `
 
 const SocialIcon = styled.div`
