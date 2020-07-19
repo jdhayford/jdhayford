@@ -1,1 +1,1 @@
-![Image](./src/images/jh.svg)
+![Image](../src/images/jh-fav.png)
