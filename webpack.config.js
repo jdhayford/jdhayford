@@ -106,6 +106,10 @@ module.exports = {
           rel: 'stylesheet',
           type: 'text/css',
         },
+        {
+          rel: 'manifest',
+          href: '/manifest.webmanifest'
+        }
       ],
       scripts: [
         'https://apis.google.com/js/api.js',

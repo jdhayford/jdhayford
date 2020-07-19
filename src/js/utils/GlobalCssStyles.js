@@ -5,6 +5,8 @@ import Montserrat from '../../fonts/Montserrat/Montserrat-Regular.ttf'
 import { MIST, DARK_MIST, SILVER, DARK_SILVER, MATTE_GREY, DARK_SLATE } from './Colors'
 import BG from '../../images/blue-mesh-bg.jpg'
 import '../../images/jh-fav.png'
+import '../../images/jh-512.png'
+import '../../images/jh-192.png'
 
 const MAIN_FONT = "'Montserrat', sans-serif"
 
