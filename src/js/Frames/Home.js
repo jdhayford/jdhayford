@@ -8,13 +8,7 @@ import Me from '../../images/me.png'
 import Header, { withHeader } from '../Components/Header'
 
 
-const Row = styled.div`
-  display: flex;
-  min-width: calc(100vw - 20rem);
-
-  @media only screen and (max-width: 600px) {
-    width: 100%;
-  }
+const AvatarCircle = styled.div`
 `
 
 const Avatar = styled.img`
@@ -28,8 +22,10 @@ const Avatar = styled.img`
 const AvatarSubtitle = styled.div`
   margin-left: 2rem;
 
-  @media only screen and (max-width: 700px) {
-    margin-top: 2rem;;
+  @media only screen and (max-width: 600px) {
+    margin-left: 0;
+    padding: 0 1rem;
+    margin-top: 2rem;
   }
 `
 
@@ -50,7 +46,7 @@ const MainSection = styled.div`
     border-radius: 0.5rem;
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
   
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 600px) {
       padding: 1.5rem 0.5rem;
     }
 `
@@ -59,7 +55,7 @@ const Intro = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 600px) {
         flex-direction: column;
     }
 `
@@ -70,7 +66,7 @@ const Links = styled.div`
   margin-top: 0.5rem;
   align-self: flex-end;
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 600px) {
     margin-top: 2rem;
     align-self: center;
   }
@@ -121,7 +117,9 @@ const Home = (props) => {
         <>
             <MainSection>
               <Intro>
-                <Avatar src={Me} />
+                <AvatarCircle>
+                  <Avatar src={Me} />
+                </AvatarCircle>
                 <AvatarSubtitle>
                     Hey there, I'm <MeSpan>Jack</MeSpan>.
                     <br />
