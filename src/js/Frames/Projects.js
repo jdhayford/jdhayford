@@ -101,9 +101,11 @@ const Info = styled.div`
   box-shadow: inset -2px -2px 8px rgba(231,231,231,0.15), inset 2px 2px 8px rgba(0,0,0,0.15);
   border-radius: 0.5rem;
 
-  span {
+  div {
     font-weight: lighter;
     opacity: 0.7;
+    padding-left: 0.5rem;
+    border-left: 1px solid #c5cfd8;
   }
 `
 
@@ -140,9 +142,9 @@ const Project = (props) => {
                   Strumpad brings the theory, allowing guitarists to easily find chords and build chord progressions without having to know theory.
                   <br />
                   <br />
-                  <span>
-                    I built Strumpad in an attempt to close the feedback loop with experimenting and playing.
-                  </span>
+                  <div>
+                    I built Strumpad in an attempt to close the feedback loop between exploring and playing.
+                  </div>
                 </Info>
                 <Tools>
                   <i className="devicon-react-original" alt='react'></i>
@@ -164,10 +166,10 @@ const Project = (props) => {
                   Deja is a chrome extension that lets you create "replays" from live streams (specifically HLS streams).
                   <br />
                   <br />
-                  <span>
+                  <div>
                     I mainly used this to learn HLS streaming and Go.
-                    One cool part about this was approach was that you could grab a replay from your phone while watching the stream on the computer.
-                  </span>
+                    One cool part about this approach was that you could grab a replay from your phone while watching the stream on the computer.
+                  </div>
                 </Info>
                 <Tools>
                   <i className='devicon-go-plain' alt='golang'></i>
@@ -190,9 +192,9 @@ const Project = (props) => {
                   Frak is a small POC extension I built while testing out the MediaStream Recording API.
                   <br />
                   <br />
-                  <span>
-                    It essentially lets you click a video element you want to record, then after you pause the video it prompts you to download the created video.
-                  </span>
+                  <div>
+                    You click a video element you want to record, then after you pause the video it prompts you to download the created video.
+                  </div>
                 </Info>
                 <Tools>
                   <i className='devicon-javascript-plain' alt='javascript'></i>
