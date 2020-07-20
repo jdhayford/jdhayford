@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router'
+import { HashRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import ReactGA from 'react-ga'
@@ -18,9 +19,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <ConnectedRouter history={history}>
+        <HashRouter>
           <Main />
-        </ConnectedRouter>
+        </HashRouter>
         <GlobalCssStyles />
       </Provider>
     )

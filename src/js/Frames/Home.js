@@ -104,7 +104,7 @@ const SocialIcon = styled.div`
 const Github = () => (
   <SocialIcon>
     <a href='https://github.com/jdhayford'>
-      <i class="fab fa-github"></i>
+      <i className="fab fa-github"></i>
     </a>
   </SocialIcon>
 )
@@ -112,7 +112,7 @@ const Github = () => (
 const Linkedin = () => (
   <SocialIcon>
     <a href='https://linkedin.com/in/jack-hayford/'>
-      <i class="fab fa-linkedin"></i>
+      <i className="fab fa-linkedin"></i>
     </a>
   </SocialIcon>
 )
@@ -120,7 +120,7 @@ const Linkedin = () => (
 const Twitter = () => (
   <SocialIcon>
     <a href='https://twitter.com/hayford_jack'>
-      <i class="fab fa-twitter"></i>
+      <i className="fab fa-twitter"></i>
     </a>
   </SocialIcon>
 )

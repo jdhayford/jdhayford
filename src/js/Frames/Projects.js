@@ -145,7 +145,7 @@ const Project = (props) => {
                   </span>
                 </Info>
                 <Tools>
-                  <i class="devicon-react-original" alt='react'></i>
+                  <i className="devicon-react-original" alt='react'></i>
                 </Tools>
               </Description>
             </ProjectSection>
@@ -170,8 +170,8 @@ const Project = (props) => {
                   </span>
                 </Info>
                 <Tools>
-                  <i class='devicon-go-plain' alt='golang'></i>
-                  <i class='devicon-react-original' alt='react'></i>
+                  <i className='devicon-go-plain' alt='golang'></i>
+                  <i className='devicon-react-original' alt='react'></i>
                 </Tools>
               </Description>
             </ProjectSection>
@@ -195,7 +195,7 @@ const Project = (props) => {
                   </span>
                 </Info>
                 <Tools>
-                  <i class='devicon-javascript-plain' alt='javascript'></i>
+                  <i className='devicon-javascript-plain' alt='javascript'></i>
                 </Tools>
               </Description>
             </ProjectSection>
