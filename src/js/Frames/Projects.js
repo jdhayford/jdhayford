@@ -161,12 +161,12 @@ const Project = (props) => {
                   </a>
                 </Header>
                 <Info>
-                  Deja is a chrome extension that lets you create "replays" from live streams (specifically HLS streams)
+                  Deja is a chrome extension that lets you create "replays" from live streams (specifically HLS streams).
                   <br />
                   <br />
                   <span>
                     I mainly used this to learn HLS streaming and Go.
-                    One cool part is that you could grab a replay from your phone while watching the stream on the computer.
+                    One cool part about this was approach was that you could grab a replay from your phone while watching the stream on the computer.
                   </span>
                 </Info>
                 <Tools>
@@ -187,11 +187,11 @@ const Project = (props) => {
                   </a>
                 </Header>
                 <Info>
-                  Frak is a small POC extension I built to learn what the MediaStream Recording API was capable of.
+                  Frak is a small POC extension I built while testing out the MediaStream Recording API.
                   <br />
                   <br />
                   <span>
-                  It essentially lets you click a video element you want to record, then after you pause the video it prompts you to download the created video.
+                    It essentially lets you click a video element you want to record, then after you pause the video it prompts you to download the created video.
                   </span>
                 </Info>
                 <Tools>
