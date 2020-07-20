@@ -71,7 +71,8 @@ const Demo = styled.div`
 const Looper = styled.video.attrs(() => ({
   autoPlay: true,
   loop: true,
-  muted: true
+  muted: true,
+  controls: true
 }))`
   width: 100%;
   border-radius: 0.5rem;
