@@ -96,6 +96,10 @@ module.exports = {
       mobile: true,
       links: [
         {
+          rel: 'stylesheet',
+          href: 'https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css'
+        },
+        {
           href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
           rel: 'stylesheet',
           integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf',

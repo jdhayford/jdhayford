@@ -3,7 +3,20 @@ import { withRouter } from 'react-router'
 import styled, { css } from 'styled-components'
 import { connect } from 'react-redux'
 
-import { RIFF_VIOLET, DARK_SLATE, PRIMARY_ACCENT, TENNIS_YELLOW } from '../utils/Colors'
+import * as Colors from '../utils/Colors'
+
+const Wrapper = styled.div`
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: stretch;
+
+    max-width: 44rem;
+
+    @media only screen and (max-width: 700px) {
+        max-width: 95%
+    }
+`
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -34,12 +47,12 @@ const Option = styled.div`
   }
 
   ${props => props.selected && css`
-    color: #f3faff;
+    color: ${Colors.SNOW_WHITE};
     background: rgba(51,51,51,0.64);
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
     transition: all 0.2s ease-in-out;
     :hover {
-      color: #f3faff;
+      color: ${Colors.SNOW_WHITE};
       background-color: rgba(51, 51, 51, 0.54);
     }
   `};
@@ -55,17 +68,19 @@ export const Header = (props) => {
   const { pathname }  = props.location
   const goTo = path => () => props.history.push(path)
   return (
-    <HeaderWrapper>
-      <Option selected={pathname === '/'} onClick={goTo('/')}>
-        Home
-      </Option>
-      <Option selected={pathname === '/projects'} onClick={goTo('/projects')}>
-        Projects
-      </Option>
-      <Option selected={pathname === '/blog'} onClick={goTo('/blog')}>
-        Blog
-      </Option>
-    </HeaderWrapper>
+    <Wrapper>
+      <HeaderWrapper>
+        <Option selected={pathname === '/'} onClick={goTo('/')}>
+          Home
+        </Option>
+        <Option selected={pathname === '/projects'} onClick={goTo('/projects')}>
+          Projects
+        </Option>
+        <Option selected={pathname === '/blog'} onClick={goTo('/blog')}>
+          Blog
+        </Option>
+      </HeaderWrapper>
+    </Wrapper>
   )
 }
 

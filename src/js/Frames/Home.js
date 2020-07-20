@@ -5,8 +5,21 @@ import styled from 'styled-components'
 
 import { RIFF_VIOLET, DARK_SLATE } from '../utils/Colors'
 import Me from '../../images/me.png'
-import Header, { withHeader } from '../Components/Header'
+import * as Colors from '../utils/Colors'
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: stretch;
+    ${'' /* padding-bottom: 12rem; */}
+
+    max-width: 44rem;
+
+    @media only screen and (max-width: 700px) {
+        max-width: 95%
+    }
+`
 
 const AvatarCircle = styled.div`
 `
@@ -30,7 +43,7 @@ const AvatarSubtitle = styled.div`
 `
 
 const MeSpan = styled.span`
-    color: #5EFCE8;
+    color: ${Colors.MINT_GREEN};
     font-weight: 800;
 `
 
@@ -41,7 +54,7 @@ const MainSection = styled.div`
     margin-top: 2rem;
     padding: 2rem;
     font-size: 1.5rem;
-    color: #f3faff;
+    color: ${Colors.SNOW_WHITE};
     background: rgba(51,51,51,0.64);
     border-radius: 0.5rem;
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
@@ -80,10 +93,10 @@ const SocialIcon = styled.div`
   transition: color 0.15s ease-in-out;
 
   a {
-    color: #f3faff;
+    color: ${Colors.SNOW_WHITE};
 
     :hover {
-      color: #5EFCE8;
+      color: ${Colors.MINT_GREEN};
     }
   }
 `
@@ -114,7 +127,7 @@ const Twitter = () => (
 
 const Home = (props) => {
     return (
-        <>
+        <Wrapper>
             <MainSection>
               <Intro>
                 <AvatarCircle>
@@ -133,7 +146,7 @@ const Home = (props) => {
                 <Twitter />
               </Links>
             </MainSection>
-        </>
+        </Wrapper>
     )
 }
 

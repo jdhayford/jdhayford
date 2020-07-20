@@ -3,10 +3,21 @@ import shortid from 'shortid'
 import ReactGA from 'react-ga'
 import styled from 'styled-components'
 
-import { RIFF_VIOLET, DARK_SLATE } from '../utils/Colors'
-import Me from '../../images/me.png'
-import Header, { withHeader } from '../Components/Header'
+import * as Colors from '../utils/Colors'
 
+const Wrapper = styled.div`
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: stretch;
+
+    max-width: 60rem;
+    padding-bottom: 6rem;
+
+    @media only screen and (max-width: 900px) {
+        max-width: 95%
+    }
+`
 
 const Row = styled.div`
   display: flex;
@@ -17,70 +28,178 @@ const Row = styled.div`
   }
 `
 
-const MainSection = styled.div`
+const ProjectSection = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     margin-top: 2rem;
     padding: 2rem;
     font-size: 1.5rem;
-    color: #f3faff;
+    color: ${Colors.SNOW_WHITE};
     background: rgba(51,51,51,0.64);
     border-radius: 0.5rem;
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
   
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 800px) {
       padding: 1.5rem 0.5rem;
+      flex-direction: column;
+      align-items: center;
     }
 `
 
-const SocialIcon = styled.div`
-  font-size: 2rem;
-  padding: 0 1.25rem;
-
-  cursor: pointer;
-  transition: color 0.15s ease-in-out;
-
+const Header = styled.div`
   a {
-    color: #f3faff;
+    ${'' /* text-decoration: none; */}
+    text-decoration-color: rgba(255, 255, 255, 0.25);
+    color: ${Colors.SNOW_WHITE};
 
     :hover {
-      color: #5EFCE8;
+      opacity: 0.8;
     }
   }
 `
 
-const Github = () => (
-  <SocialIcon>
-    <a href='https://github.com/jdhayford'>
-      <i class="fab fa-github"></i>
-    </a>
-  </SocialIcon>
-)
+const Demo = styled.div`
+  width: 30rem;
+  border-radius: 0.5rem;
+  align-self: center;
 
-const Linkedin = () => (
-  <SocialIcon>
-    <a href='https://linkedin.com/in/jack-hayford/'>
-      <i class="fab fa-linkedin"></i>
-    </a>
-  </SocialIcon>
-)
+  @media only screen and (max-width: 800px) {
+    width: 95%;
+  }
+`
 
-const Twitter = () => (
-  <SocialIcon>
-    <a href='https://twitter.com/hayford_jack'>
-      <i class="fab fa-twitter"></i>
-    </a>
-  </SocialIcon>
-)
+const Looper = styled.video.attrs(() => ({
+  autoPlay: true,
+  loop: true,
+  muted: true
+}))`
+  width: 100%;
+  border-radius: 0.5rem;
+`
+
+const Image = styled.img`
+  width: 100%;
+  border-radius: 0.5rem;
+`
+
+const Description = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  padding-left: 2rem;
+
+  @media only screen and (max-width: 800px) {
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+`
+const Info = styled.div`
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  box-shadow: inset -2px -2px 8px rgba(231,231,231,0.15), inset 2px 2px 8px rgba(0,0,0,0.15);
+  border-radius: 0.5rem;
+
+  span {
+    font-weight: lighter;
+    opacity: 0.7;
+  }
+`
+
+const Tools = styled.div`
+  flex: 1;
+  font-size: 1.75rem;
+  justify-content: flex-end;
+  align-items: flex-end;
+  display: flex;
+  padding-top: 1.5rem;
+
+  i {
+    margin-left: 1rem;
+  }
+`
+
 
 const Project = (props) => {
     return (
-        <>
-            <MainSection>
-              Coming soon
-            </MainSection>
-        </>
+        <Wrapper>
+            <ProjectSection>
+              <Demo>
+                <Looper src='https://s3.amazonaws.com/www.jdhayford.io/videos/quick-demo.mp4'>
+                  Your browser does not support HTML5 Player.
+                </Looper>
+              </Demo>
+              <Description>
+                <Header>
+                  <a href='https://strumpad.com'>
+                    Strumpad.com
+                  </a>
+                </Header>
+                <Info>
+                  Strumpad brings the theory, allowing guitarists to easily find chords and build chord progressions without having to know theory.
+                  <br />
+                  <br />
+                  <span>
+                    I built Strumpad in an attempt to close the feedback loop with experimenting and playing.
+                  </span>
+                </Info>
+                <Tools>
+                  <i class="devicon-react-original" alt='react'></i>
+                </Tools>
+              </Description>
+            </ProjectSection>
+
+            <ProjectSection>
+              <Demo>
+                <Image src='https://s3.amazonaws.com/www.jdhayford.io/images/deja-demo.png' />
+              </Demo>
+              <Description>
+                <Header>
+                  <a href='https://github.com/jdhayford/deja'>
+                    Deja
+                  </a>
+                </Header>
+                <Info>
+                  Deja is a chrome extension that lets you create "replays" from live streams (specifically HLS streams)
+                  <br />
+                  <br />
+                  <span>
+                    I mainly used this to learn HLS streaming and Go.
+                    One cool part is that you could grab a replay from your phone while watching the stream on the computer.
+                  </span>
+                </Info>
+                <Tools>
+                  <i class='devicon-go-plain' alt='golang'></i>
+                  <i class='devicon-react-original' alt='react'></i>
+                </Tools>
+              </Description>
+            </ProjectSection>
+
+            <ProjectSection>
+              <Demo>
+                <Looper src='https://s3.amazonaws.com/www.jdhayford.io/images/frak-demo.mp4' />
+              </Demo>
+              <Description>
+                <Header>
+                  <a href='https://github.com/jdhayford/frak'>
+                    Frak
+                  </a>
+                </Header>
+                <Info>
+                  Frak is a small POC extension I built to learn what the MediaStream Recording API was capable of.
+                  <br />
+                  <br />
+                  <span>
+                  It essentially lets you click a video element you want to record, then after you pause the video it prompts you to download the created video.
+                  </span>
+                </Info>
+                <Tools>
+                  <i class='devicon-javascript-plain' alt='javascript'></i>
+                </Tools>
+              </Description>
+            </ProjectSection>
+        </Wrapper>
     )
 }
 
