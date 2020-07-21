@@ -198,7 +198,7 @@ const Project = (props) => {
                   </div>
                 </Info>
                 <Tools>
-                  <i className='devicon-javascript-plain' alt='javascript'></i>
+                  <i className='devicon-react-plain' alt='javascript'></i>
                 </Tools>
               </Description>
             </ProjectSection>
