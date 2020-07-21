@@ -91,6 +91,27 @@ module.exports = {
           content:
             'width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no',
         },
+        {
+          name: 'twitter:card',
+          content: 'summary'
+        },
+        {
+          name: 'twitter:site',
+          content: '@jdhayford'
+        },
+        {
+          name: 'twitter:title',
+          content: 'Jack Hayford'
+        },
+        {
+          name: 'twitter:description',
+          content: 'A bit about me and stuff I build'
+        },
+        {
+          name: 'twitter:image',
+          content: 'https://s3.amazonaws.com/www.jdhayford.io/images/jh-logo.png'
+        },
+
       ],
       title: 'Jack Hayford',
       mobile: true,
