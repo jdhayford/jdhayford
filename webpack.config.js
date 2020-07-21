@@ -92,6 +92,10 @@ module.exports = {
             'width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no',
         },
         {
+          name: 'google-site-verification',
+          content: 'XNT2RSjb4doOV2Nsoy75SjRfrgqb2M5Epb41gVWfMsk'
+        },
+        {
           name: 'twitter:card',
           content: 'summary'
         },
@@ -111,7 +115,6 @@ module.exports = {
           name: 'twitter:image',
           content: 'https://s3.amazonaws.com/www.jdhayford.io/images/jh-logo.png'
         },
-
       ],
       title: 'Jack Hayford',
       mobile: true,
