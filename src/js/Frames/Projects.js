@@ -129,7 +129,7 @@ const Project = (props) => {
         <Wrapper>
             <ProjectSection>
               <Demo>
-                <Looper src='https://s3.amazonaws.com/www.jdhayford.io/videos/quick-demo.mp4'>
+                <Looper src='https://s3.amazonaws.com/www.jdhayford.io/videos/strumpad-demo.mp4'>
                   Your browser does not support HTML5 Player.
                 </Looper>
               </Demo>
@@ -175,6 +175,30 @@ const Project = (props) => {
                 <Tools>
                   <i className='devicon-go-plain' alt='golang'></i>
                   <i className='devicon-react-original' alt='react'></i>
+                </Tools>
+              </Description>
+            </ProjectSection>
+
+            <ProjectSection>
+              <Demo>
+                <Looper src='https://s3.amazonaws.com/www.jdhayford.io/videos/arkade-demo.mp4' />
+              </Demo>
+              <Description>
+                <Header>
+                  <a href='https://github.com/jdhayford/arkade'>
+                    Arkade
+                  </a>
+                </Header>
+                <Info>
+                  Arkade was a one-day POC for doing websocket-driven games using a main shared display.
+                  <br />
+                  <br />
+                  <div>
+                    You and another player could scan the main screen QR to join, then faceoff in a round of Rock, Paper, Scissors.
+                  </div>
+                </Info>
+                <Tools>
+                  <i className='devicon-javascript-plain' alt='javascript'></i>
                 </Tools>
               </Description>
             </ProjectSection>
