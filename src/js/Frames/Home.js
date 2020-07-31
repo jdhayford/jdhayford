@@ -104,7 +104,7 @@ const SocialIcon = styled.div`
 const Github = () => (
   <SocialIcon>
     <a href='https://github.com/jdhayford'>
-      <i className="fab fa-github"></i>
+      <i alt='github' className="fab fa-github"></i>
     </a>
   </SocialIcon>
 )
@@ -112,7 +112,7 @@ const Github = () => (
 const Linkedin = () => (
   <SocialIcon>
     <a href='https://linkedin.com/in/jack-hayford/'>
-      <i className="fab fa-linkedin"></i>
+      <i alt='linkedin' className="fab fa-linkedin"></i>
     </a>
   </SocialIcon>
 )
@@ -120,7 +120,7 @@ const Linkedin = () => (
 const Twitter = () => (
   <SocialIcon>
     <a href='https://twitter.com/hayford_jack'>
-      <i className="fab fa-twitter"></i>
+      <i alt='twitter' className="fab fa-twitter"></i>
     </a>
   </SocialIcon>
 )
@@ -131,7 +131,7 @@ const Home = (props) => {
             <MainSection>
               <Intro>
                 <AvatarCircle>
-                  <Avatar src={Me} />
+                  <Avatar src={Me} alt={'picture of me'} />
                 </AvatarCircle>
                 <AvatarSubtitle>
                     Hey there, I'm <MeSpan>Jack</MeSpan>.
