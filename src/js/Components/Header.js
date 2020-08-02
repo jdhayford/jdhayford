@@ -1,7 +1,9 @@
 import React from 'react'
 import { withRouter } from 'react-router'
+// import { NavLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import { connect } from 'react-redux'
+import NavLink from '../utils/Link'
 
 import * as Colors from '../utils/Colors'
 
@@ -12,10 +14,17 @@ const Wrapper = styled.div`
     align-items: stretch;
 
     max-width: 44rem;
+    height: 7rem;
 
     @media only screen and (max-width: 700px) {
         max-width: 95%
     }
+`
+
+const Logo = styled.img`
+    display: flex;
+    height: 3rem;
+    margin-right: 2rem;
 `
 
 const HeaderWrapper = styled.div`
@@ -30,7 +39,7 @@ const HeaderWrapper = styled.div`
   }
 `
 
-const Option = styled.div`
+const Option = styled(NavLink)`
   flex: 1;
   color: rgba(51,51,51,0.64);
   font-size: 1.75rem;
@@ -46,7 +55,7 @@ const Option = styled.div`
     color: rgba(51, 51, 51, 0.64);
   }
 
-  ${props => props.selected && css`
+  &.active {
     color: ${Colors.SNOW_WHITE};
     background: rgba(51,51,51,0.64);
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
@@ -55,7 +64,7 @@ const Option = styled.div`
       color: ${Colors.SNOW_WHITE};
       background-color: rgba(51, 51, 51, 0.54);
     }
-  `};
+  }
 
 `
 
@@ -66,18 +75,18 @@ const Row = styled.div`
 
 export const Header = (props) => {
   const { pathname }  = props.location
-  const goTo = path => () => props.history.push(path)
   return (
     <Wrapper>
       <HeaderWrapper>
-        <Option selected={pathname === '/'} onClick={goTo('/')}>
+        {/* <Logo src='https://s3.amazonaws.com/www.jdhayford.io/images/jh-logo-2.png' /> */}
+        <Option exact to='/'>
           Home
         </Option>
-        <Option selected={pathname === '/projects'} onClick={goTo('/projects')}>
-          Projects
+        <Option selected={pathname === '/projects'} to='/projects'>
+            Projects
         </Option>
-        <Option selected={pathname === '/blog'} onClick={goTo('/blog')}>
-          Blog
+        <Option selected={pathname.startsWith('/blog')} to='/blog'>
+            Blog
         </Option>
       </HeaderWrapper>
     </Wrapper>

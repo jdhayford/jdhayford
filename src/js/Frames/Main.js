@@ -6,6 +6,7 @@ import { Route, Switch, Redirect } from 'react-router'
 import Home from './Home'
 import Projects from './Projects'
 import Blog from './Blog'
+import StreamingBlog from '../blogs/StreamingBlog'
 import Header from '../Components/Header'
 
 
@@ -31,6 +32,7 @@ const Main = (props) => {
                 <Route exact path='/' component={Home} />
                 <Route exact path='/projects' component={Projects} />
                 <Route exact path='/blog' component={Blog} />
+                <Route exact path='/blog/peak-into-video-streaming' component={StreamingBlog} />
             </Switch>
         </>
     )

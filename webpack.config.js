@@ -62,6 +62,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.(md)$/,
+        use: ['raw-loader'],
+      },
+      {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           {

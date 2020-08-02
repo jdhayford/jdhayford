@@ -38,6 +38,10 @@ const ProjectSection = styled.div`
     background: rgba(51,51,51,0.64);
     border-radius: 0.5rem;
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
+
+    &:first-child {
+      margin-top: 1rem;
+    }
   
     @media only screen and (max-width: 800px) {
       padding: 1.5rem 0.5rem;

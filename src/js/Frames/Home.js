@@ -51,7 +51,7 @@ const MainSection = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 2rem;
     font-size: 1.5rem;
     color: ${Colors.SNOW_WHITE};
