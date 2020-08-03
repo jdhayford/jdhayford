@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import shortid from 'shortid'
 import ReactGA from 'react-ga'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import * as Colors from '../utils/Colors'
 
@@ -131,6 +132,9 @@ const Tools = styled.div`
 const Project = (props) => {
     return (
         <Wrapper>
+            <Helmet>
+              <title>Jack Hayford - Projects</title>
+            </Helmet>
             <ProjectSection>
               <Demo>
                 <Looper src='https://www.jdhayford.io/videos/strumpad-demo.mp4'>

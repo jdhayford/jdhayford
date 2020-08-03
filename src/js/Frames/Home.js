@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import shortid from 'shortid'
 import ReactGA from 'react-ga'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import { RIFF_VIOLET, DARK_SLATE } from '../utils/Colors'
 import Me from '../../images/me.png'
@@ -128,6 +129,9 @@ const Twitter = () => (
 const Home = (props) => {
     return (
         <Wrapper>
+            <Helmet>
+              <title>Jack Hayford</title>
+            </Helmet>
             <MainSection>
               <Intro>
                 <AvatarCircle>

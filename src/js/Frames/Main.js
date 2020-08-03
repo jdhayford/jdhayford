@@ -32,7 +32,7 @@ const Main = (props) => {
                 <Route exact path='/' component={Home} />
                 <Route exact path='/projects' component={Projects} />
                 <Route exact path='/blog' component={Blog} />
-                <Route exact path='/blog/peak-into-video-streaming' component={StreamingBlog} />
+                <Route exact path='/blog/peek-into-video-streaming' component={StreamingBlog} />
             </Switch>
         </>
     )

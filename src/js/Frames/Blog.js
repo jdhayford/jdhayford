@@ -5,6 +5,7 @@ import ReactGA from 'react-ga'
 import styled from 'styled-components'
 import * as Colors from '../utils/Colors'
 import Link from '../utils/Link'
+import { Helmet } from 'react-helmet'
 
 const Wrapper = styled.div`
     display: flex;
@@ -102,7 +103,10 @@ const Description = styled.div`
 const Blog = (props) => {
     return (
         <Wrapper>
-            <BlogItem to='/blog/peak-into-video-streaming'>
+            <Helmet>
+                <title>Jack Hayford - Blog</title>
+            </Helmet>
+            <BlogItem to='/blog/peek-into-video-streaming'>
                 <Thumbnail>
                     <Image src='https://www.jdhayford.io/images/stream-thumb.png' />
                 </Thumbnail>

@@ -3,6 +3,7 @@ import React from 'react'
 import { withRouter } from 'react-router'
 // import { NavLink } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import { Helmet } from 'react-helmet'
 import styled, { css } from 'styled-components'
 import { connect } from 'react-redux'
 import NavLink from '../utils/Link'
@@ -64,11 +65,11 @@ const ContentWrapper = styled.div`
     border-left: 1px solid #b7c7c9;
     color: #c5cfd8;
     margin: 1rem;
+  }
 
-    a {
-      text-decoration-color: rgba(255, 255, 255, 0.25);
-      color: ${Colors.SNOW_WHITE};
-    }
+  a {
+    text-decoration-color: rgba(255, 255, 255, 0.25);
+    color: ${Colors.MINT_GREEN};
   }
 
   video {
@@ -101,9 +102,12 @@ const ContentWrapper = styled.div`
 const Blog = (props) => {
   return (
       <Wrapper>
-          <ContentWrapper>
-            <ReactMarkdown source={content} escapeHtml={false} />
-          </ContentWrapper>
+        <Helmet>
+          <title>Jack Hayford - Blog</title>
+        </Helmet>
+        <ContentWrapper>
+          <ReactMarkdown source={content} escapeHtml={false} />
+        </ContentWrapper>
       </Wrapper>
   )
 }
