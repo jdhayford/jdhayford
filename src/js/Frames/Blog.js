@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     padding-bottom: 6rem;
 
     @media only screen and (max-width: 900px) {
-        max-width: 95%
+        max-width: 95%;
     }
 `
 const BlogItem = styled(Link)`
@@ -86,27 +86,13 @@ const Description = styled.div`
     padding: 0 1rem;
   }
 `
-const Info = styled.div`
-  font-size: 1.1rem;
-  margin-top: 1rem;
-  padding: 1rem;
-  ${'' /* box-shadow: inset -2px -2px 8px rgba(231,231,231,0.15), inset 2px 2px 8px rgba(0,0,0,0.15); */}
-  border-radius: 0.5rem;
-
-  div {
-    font-weight: lighter;
-    opacity: 0.7;
-    padding-left: 0.5rem;
-    border-left: 1px solid #c5cfd8;
-  }
-`
 
 const Blog = (props) => {
     return (
         <Wrapper>
             <BlogItem to='/blog/peak-into-video-streaming'>
                 <Thumbnail>
-                    <Image src='https://s3.amazonaws.com/www.jdhayford.io/images/stream-thumb.png' />
+                    <Image src='https://www.jdhayford.io/images/stream-thumb.png' />
                 </Thumbnail>
                 <Description>
                     <Header>

@@ -14,10 +14,12 @@ const Wrapper = styled.div`
     align-items: stretch;
 
     max-width: 44rem;
-    height: 7rem;
+
+    margin: 2rem auto;
 
     @media only screen and (max-width: 700px) {
-        max-width: 95%
+        max-width: 95%;
+        margin: 1rem auto;
     }
 `
 
@@ -31,12 +33,8 @@ const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 2rem;
   width: 100%;
-
-  @media only screen and (max-width: 700px) {
-    margin-top: 1rem;
-  }
+  height: 5rem;
 `
 
 const Option = styled(NavLink)`
@@ -78,7 +76,7 @@ export const Header = (props) => {
   return (
     <Wrapper>
       <HeaderWrapper>
-        {/* <Logo src='https://s3.amazonaws.com/www.jdhayford.io/images/jh-logo-2.png' /> */}
+        {/* <Logo src='https://www.jdhayford.io/images/jh-logo-2.png' /> */}
         <Option exact to='/'>
           Home
         </Option>

@@ -1,1 +1,1 @@
-# [![Image](https://s3.amazonaws.com/www.jdhayford.io/images/jdhayfordio-link.svg)](https://www.jdhayford.io)
+# [![Image](https://www.jdhayford.io/images/jdhayfordio-link.svg)](https://www.jdhayford.io)

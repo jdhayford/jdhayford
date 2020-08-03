@@ -117,7 +117,7 @@ module.exports = {
         },
         {
           name: 'twitter:image',
-          content: 'https://s3.amazonaws.com/www.jdhayford.io/images/jh-logo.png'
+          content: 'https://www.jdhayford.io/images/jh-logo.png'
         },
       ],
       title: 'Jack Hayford',

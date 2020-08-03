@@ -133,13 +133,13 @@ const Project = (props) => {
         <Wrapper>
             <ProjectSection>
               <Demo>
-                <Looper src='https://s3.amazonaws.com/www.jdhayford.io/videos/strumpad-demo.mp4'>
+                <Looper src='https://www.jdhayford.io/videos/strumpad-demo.mp4'>
                   Your browser does not support HTML5 Player.
                 </Looper>
               </Demo>
               <Description>
                 <Header>
-                  <a href='https://strumpad.com'>
+                  <a id='strumpad' href='https://strumpad.com'>
                     Strumpad.com
                   </a>
                 </Header>
@@ -159,11 +159,11 @@ const Project = (props) => {
 
             <ProjectSection>
               <Demo>
-                <Image src='https://s3.amazonaws.com/www.jdhayford.io/images/deja-demo.png' />
+                <Image src='https://www.jdhayford.io/images/deja-demo.png' />
               </Demo>
               <Description>
                 <Header>
-                  <a href='https://github.com/jdhayford/deja'>
+                  <a id='deja' href='https://github.com/jdhayford/deja'>
                     Deja
                   </a>
                 </Header>
@@ -185,11 +185,11 @@ const Project = (props) => {
 
             <ProjectSection>
               <Demo>
-                <Looper src='https://s3.amazonaws.com/www.jdhayford.io/videos/arkade-demo.mp4' />
+                <Looper src='https://www.jdhayford.io/videos/arkade-demo.mp4' />
               </Demo>
               <Description>
                 <Header>
-                  <a href='https://github.com/jdhayford/arkade'>
+                  <a id='arkade' href='https://github.com/jdhayford/arkade'>
                     Arkade
                   </a>
                 </Header>
@@ -209,11 +209,11 @@ const Project = (props) => {
 
             <ProjectSection>
               <Demo>
-                <Looper src='https://s3.amazonaws.com/www.jdhayford.io/images/frak-demo.mp4' />
+                <Looper src='https://www.jdhayford.io/images/frak-demo.mp4' />
               </Demo>
               <Description>
                 <Header>
-                  <a href='https://github.com/jdhayford/frak'>
+                  <a id='frak' href='https://github.com/jdhayford/frak'>
                     Frak
                   </a>
                 </Header>

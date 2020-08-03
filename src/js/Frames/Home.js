@@ -69,8 +69,8 @@ const Intro = styled.div`
   flex-direction: row;
   align-items: center;
   @media only screen and (max-width: 600px) {
-        flex-direction: column;
-    }
+      flex-direction: column;
+  }
 `
 
 const Links = styled.div`
