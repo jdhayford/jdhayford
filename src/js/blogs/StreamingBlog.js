@@ -47,7 +47,12 @@ const ContentWrapper = styled.div`
   }
 
   p {
+    @media only screen and (max-width: 800px) {
+      font-size: 0.9rem;
+    }
+  }
 
+  ul {
     @media only screen and (max-width: 800px) {
       font-size: 0.9rem;
     }
@@ -58,6 +63,7 @@ const ContentWrapper = styled.div`
     padding-left: 0.5rem;
     border-left: 1px solid #b7c7c9;
     color: #c5cfd8;
+    margin: 1rem;
 
     a {
       text-decoration-color: rgba(255, 255, 255, 0.25);
@@ -72,6 +78,12 @@ const ContentWrapper = styled.div`
 
     &.tiny {
       width: 40%
+    }
+  }
+
+  code {
+    @media only screen and (max-width: 800px) {
+      word-break: break-word;
     }
   }
 
