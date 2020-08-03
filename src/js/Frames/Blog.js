@@ -40,14 +40,20 @@ const BlogItem = styled(Link)`
 
 
 const Header = styled.div`
-  a {
-    text-decoration-color: rgba(255, 255, 255, 0.25);
-    color: ${Colors.SNOW_WHITE};
+    font-size: 1.5rem;
 
-    :hover {
-      opacity: 0.8;
+    a {
+        text-decoration-color: rgba(255, 255, 255, 0.25);
+        color: ${Colors.SNOW_WHITE};
+
+        :hover {
+            opacity: 0.8;
+        }
     }
-  }
+
+    @media only screen and (max-width: 600px) {
+        font-size: 1.1rem;
+    }
 `
 
 const Thumbnail = styled.div`
@@ -68,10 +74,16 @@ const Looper = styled.video.attrs(() => ({
 const Image = styled.img`
   width: 10rem;
   border-radius: 0.5rem;
+
+    @media only screen and (max-width: 500px) {
+        width: 8rem;
+    }
 `
 
 const Subtext = styled.div`
-    font-size: 0.75rem
+    color: #c5cfd8;
+    font-size: 0.8rem;
+    padding-top: 0.25rem;
 `
 
 const Description = styled.div`
@@ -82,7 +94,7 @@ const Description = styled.div`
   padding-left: 2rem;
 
   @media only screen and (max-width: 800px) {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     padding: 0 1rem;
   }
 `
@@ -99,7 +111,7 @@ const Blog = (props) => {
                         Popping the Hood on Video Streaming
                     </Header>
                     <Subtext>
-                        08/05/20
+                        8/5/20
                     </Subtext>
                 </Description>
             </BlogItem>

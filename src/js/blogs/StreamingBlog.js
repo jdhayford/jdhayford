@@ -33,14 +33,28 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   padding: 1rem 3rem;
   max-width: 46rem;
+
+  @media only screen and (max-width: 800px) {
+    padding: 1rem 1rem;
+  }
   
   h1 {
     color: ${Colors.MINT_GREEN};
+
+    @media only screen and (max-width: 800px) {
+      font-size: 1.4rem;
+    }
+  }
+
+  p {
+
+    @media only screen and (max-width: 800px) {
+      font-size: 0.9rem;
+    }
   }
 
   blockquote {
     font-weight: lighter;
-    ${'' /* opacity: 0.7; */}
     padding-left: 0.5rem;
     border-left: 1px solid #b7c7c9;
     color: #c5cfd8;
