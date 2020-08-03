@@ -16,7 +16,7 @@ Well that certainly looks active. We can see new requests being made every secon
 <img class='small' src='https://jdhayford.io/images/request-body.png'>
 
 
-So actually if you look closely you'll notice `G@` which is commonly used with - just messing around, this is clearly a binary file in mortal tongue (the `Content-Type` header from the response was `application/octet-stream`). Lets see what our file system thinks of it.
+So actually if you look closely you'll notice `G@` which is commonly used with - just messing around, this is clearly a binary file in mortal tongue (the `Content-Type` header from the response is `application/octet-stream`). Lets see what our file system thinks of it.
 
 <img src='https://jdhayford.io/images/file-row.png'>
 

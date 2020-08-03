@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 
     width: 100vw;
     min-height: calc(100vh - 7rem);
-    background-color: ${Colors.STEEL_BLACK};
+    background-color: ${Colors.BLUE_STEEL};
     box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
     max-width: 100vw;
     margin-top: 1rem;
@@ -34,9 +34,12 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   padding: 1rem 3rem;
   max-width: 46rem;
+  line-height: 1.5rem;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 700px) {
     padding: 1rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
   }
   
   h1 {
@@ -44,18 +47,7 @@ const ContentWrapper = styled.div`
 
     @media only screen and (max-width: 800px) {
       font-size: 1.4rem;
-    }
-  }
-
-  p {
-    @media only screen and (max-width: 800px) {
-      font-size: 0.9rem;
-    }
-  }
-
-  ul {
-    @media only screen and (max-width: 800px) {
-      font-size: 0.9rem;
+      line-height: 1.75rem;
     }
   }
 
