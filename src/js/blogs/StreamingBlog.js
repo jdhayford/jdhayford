@@ -4,13 +4,23 @@ import { withRouter } from 'react-router'
 // import { NavLink } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { Helmet } from 'react-helmet'
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { connect } from 'react-redux'
 import NavLink from '../utils/Link'
 import content from './streaming-blog.md'
 
 
 import * as Colors from '../utils/Colors'
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
 
 const Wrapper = styled.div`
     display: flex;
@@ -35,6 +45,8 @@ const ContentWrapper = styled.div`
   padding: 1rem 3rem;
   max-width: 46rem;
   line-height: 1.5rem;
+
+  animation: ${fadeIn} 0.5s ease;
 
   @media only screen and (max-width: 700px) {
     padding: 1rem 1rem;
