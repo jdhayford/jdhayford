@@ -50,7 +50,7 @@ const ContentWrapper = styled.div`
 
   @media only screen and (max-width: 700px) {
     padding: 1rem 1rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.3rem;
   }
   
@@ -96,13 +96,13 @@ const ContentWrapper = styled.div`
   }
 
   code {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     word-break: break-word;
     color: #f9c49e;
     background-color: rgb(41 43 45);
     border: 1px solid #505050;
     padding: 0 0.2rem;
-    border-radius: 0.1rem;
+    border-radius: 0.15rem;
 
     @media only screen and (max-width: 800px) {
       font-size: 1.2rem;

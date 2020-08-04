@@ -63,13 +63,13 @@ Let's take a look at where it all began, the very first `.m3u8` request.
 
 `GET https://usher.ttvnw.net/api/channel/hls/cyberlivearena11.m3u8`
 
-<img src='https://jdhayford.io/images/master-manifest.png' alt='content of a master manifest request'>
+<img src='https://jdhayford.io/images/updated-master-manifest.png' alt='content of a master manifest request'>
 
-Jackpot! This manifest is very different from the ones we've seen so far and is often called the "master" manifest. Instead of a playlist of video segments, it serves as a playlist of other stream manifests. Looking at the metadata tags, we can see things like the resolution (`RESOLUTION=1280x720`), frame rate (`FRAME-RATE=30.000`), and name (`NAME="720p"`) of each stream option! Those names are exactly what the player uses to populate its quality menu:
+Jackpot! This manifest is very different from the ones we've seen so far and is often called the "master" manifest. Instead of a playlist of video segments, it serves as a playlist of other stream manifests. Looking at the metadata tags, we can see things like the resolution `RESOLUTION=1280x720`, frame rate `FRAME-RATE=30.000`, and name `NAME="720p"` of each stream option! Those names are exactly what the player uses to populate its quality menu:
 
 <img class='tiny' src='https://jdhayford.io/images/quality-options.png' alt='video quality menu with different options like 720p and 480p'>
 
-It even includes the bandwidth/bitrate (ex. `BANDWIDTH=2350314`) of each stream. This is super useful because your player can use it with your network speed to determine the best stream it can use without stopping (hence the "Auto" option above), which is also called adaptive bit rate (ABR) streaming.
+It even includes the bandwidth/bitrate `BANDWIDTH=2350314` of each stream. This is super useful because your player can use it with your network speed to determine the best stream it can use without stopping (hence the "Auto" option above), which is also called adaptive bit rate (ABR) streaming.
 
 So there you have it, folks, we've solved the case. The main ingredients for a stream is a player and a manifest (and sometimes a library depending on the browser/platform to help the player with the logistics, i.e. [hls.js](https://github.com/video-dev/hls.js/)). Now remember there is a world of streaming out there and this is only one example, so we'll do some rapid-fire Q&A to solidify our understanding and add context.
 
