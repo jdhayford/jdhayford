@@ -96,7 +96,7 @@ const ContentWrapper = styled.div`
   }
 
   code {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     word-break: break-word;
     color: #f9c49e;
     background-color: rgb(41 43 45);
