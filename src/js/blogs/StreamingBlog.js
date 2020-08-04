@@ -18,6 +18,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: stretch;
 
+    width: 100vw;
     min-height: calc(100vh - 7rem);
     background-color: ${Colors.BLUE_STEEL};
     box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
@@ -59,10 +60,11 @@ const ContentWrapper = styled.div`
 
     p {
       margin: 0.5rem 0;
+      word-break: break-word;
     }
 
     p:not(:first-child) {
-      margin-top: 1rem;
+      padding-top: 1rem;
     }
   }
 
@@ -83,8 +85,9 @@ const ContentWrapper = styled.div`
 
   code {
     font-size: 1.4rem;
+    word-break: break-word;
+
     @media only screen and (max-width: 800px) {
-      word-break: break-word;
       font-size: 1.2rem;
     }
   }
