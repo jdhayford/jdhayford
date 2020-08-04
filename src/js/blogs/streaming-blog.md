@@ -108,7 +108,7 @@ So there you have it, folks, we've solved the case. The main ingredients for a s
 > 
 > The first is fairly simple, each request from the client for a segment has some overhead time cost, so shorter segments means more overhead time cost, thus hurting throughput and adding latency. You can see this relationship graphed below for persistent and non-persistent connections ([source](https://streaminglearningcenter.com/blogs/choosing-the-optimal-segment-duration.html)):
 >
-> <img src='https://jdhayford.io/images/segment-graph.png' alt='graph of throughput vs segment length'>
+> <img class='small' src='https://jdhayford.io/images/segment-graph.png' alt='graph of throughput vs segment length'>
 > 
 > The second relates to how the length of a segment affects its compression and memory size (which also determines how much total data has to be transferred through a system for a stream). Video encoding largely accomplishes compression by recording the changes/deltas in the frames over time rather than every single frame. 
 > 
