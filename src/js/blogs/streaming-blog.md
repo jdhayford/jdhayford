@@ -8,7 +8,7 @@ Like so many quests for knowledge, this one began by cracking open the Developer
 
 <video src='https://www.jdhayford.io/videos/blogs/video-1.mp4' alt='Demo of Network Requests in Developer Sidebar' autoPlay loop muted>
 
-Well that certainly looks active. We can see new requests being made every second but what we notice is that there are GET requests to some files either ending in `.ts` or `.m3u8`. Let's take a look at a request for a `.ts` file: 
+Well that certainly looks active. We can see new requests being made every few seconds but what we notice is that there are a bunch of GET requests to some files either ending in `.ts` or `.m3u8`. Let's take a look at a request for a `.ts` file: 
 
 `GET https://video-edge-8c7268.mia02.abs.hls.ttvnw.net/v1/segment/CooFP2R-...etc...brAeZag.ts`
 
