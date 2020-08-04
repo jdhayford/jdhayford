@@ -106,7 +106,7 @@ const Blog = (props) => {
             <Helmet>
                 <title>Jack Hayford - Blog</title>
             </Helmet>
-            <BlogItem to='/blog/peek-into-video-streaming'>
+            <BlogItem to='/blog/popping-the-hood-on-video-streaming'>
                 <Thumbnail>
                     <Image src='https://www.jdhayford.io/images/stream-thumb.png' />
                 </Thumbnail>
