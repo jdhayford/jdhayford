@@ -1,6 +1,6 @@
 # Popping the Hood on Video Streaming
 
-A couple of years ago I was watching a live sports stream and got to thinking. Not about the website's questionable legality, strange domain name or borderline offensive sidebar ads. Oh no, I was finally ready to peek behind the black box that had given me hours and hours of rom-coms, compilations of dads catching foul balls and Star Wars fan theories.
+A couple of years ago I was watching a live sports stream (on a somewhat sketchy site) and got to thinking. Not about the website's questionable legality, strange domain name or borderline offensive sidebar ads. Oh no, I was finally ready to peek behind the black box that had given me hours and hours of rom-coms, compilations of dads catching foul balls and Star Wars fan theories, just to see what I could find out.
 
 Like so many quests for knowledge, this one began by cracking open the Developer sidebar. These ol' moving pictures gotta come from somewhere right? So let's hop on over to the network tab to see what's in the pipes.
 
