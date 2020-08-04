@@ -82,6 +82,7 @@ const ContentWrapper = styled.div`
     font-size: 1.4rem;
     @media only screen and (max-width: 800px) {
       word-break: break-word;
+      font-size: 1.2rem;
     }
   }
 
