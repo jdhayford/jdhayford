@@ -98,6 +98,11 @@ const ContentWrapper = styled.div`
   code {
     font-size: 1.4rem;
     word-break: break-word;
+    color: #f9c49e;
+    background-color: rgb(41 43 45);
+    border: 1px solid #505050;
+    padding: 0 0.2rem;
+    border-radius: 0.1rem;
 
     @media only screen and (max-width: 800px) {
       font-size: 1.2rem;
