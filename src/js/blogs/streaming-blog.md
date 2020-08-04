@@ -71,7 +71,7 @@ Jackpot! This manifest is very different from the ones we've seen so far, in fac
 
 It even includes the bandwidth/bitrate (ex. `BANDWIDTH=2350314`) of each stream. This is super useful because your player can use with it with your network speed to determine the best stream it can use without stopping (hence the "Auto" option above), which is also called adaptive bit rate (ABR) streaming.
 
-So there you have it folks, we've solved the case. The main ingredients for a stream is a player and a manifest (and sometimes a library depending on the browser/platform to help the player with the logistics, i.e. [hls.js](https://github.com/video-dev/hls.js/)). Now remember there is a universe of streaming out there and this is only one example, so we'll do some rapid fire Q&A to solidify our understanding and add context.
+So there you have it folks, we've solved the case. The main ingredients for a stream is a player and a manifest (and sometimes a library depending on the browser/platform to help the player with the logistics, i.e. [hls.js](https://github.com/video-dev/hls.js/)). Now remember there is a world of streaming out there and this is only one example, so we'll do some rapid fire Q&A to solidify our understanding and add context.
 
 
 ### Is all video streaming done like this, using these `.m3u8` and `.ts` files?
@@ -92,16 +92,32 @@ So there you have it folks, we've solved the case. The main ingredients for a st
 
 > Nope! It can easily be used for On Demand content. Instead of a constantly updating sliding window playlist, the manifest will be a static list of all of the segments that make up the entire program. Additionally, it will have the following metadata tag `#EXT-X-PLAYLIST-TYPE` set to `VOD`.
 
-### Why are the segments so short?
-
-> Ah so you remembered!
-
 ### If a live or on-demand stream tells you where all the segments are, what prevents people from grabbing the videos directly and potentially redistributing them?
 
-> Oh you are a mischevious one aren't you? I won't go too deep into it as there is an entire world of content protection and Digital Right's Management (aka DRM). When it comes down to it, you either restrict access to the files (somewhat effective but fairly simple) or encrypt the videos to control the ability to actually view them with DRM (most effective but difficult due to widespread dependancy requirements across players and platforms).
+> Oh you are a mischevious one aren't you? I won't go too deep into it as there is an entire world of content protection and Digital Right's Management (aka DRM). When it comes down to it, you either restrict access to the files (somewhat effective but relatively straightforward) or encrypt the videos to control the ability to actually view them with DRM (most effective but difficult due to widespread dependancy requirements across players and platforms).
 > 
-> This was something I did a bit of exploration on while building a toy project called [Deja](/projects#deja) which is a chrome extension that let's you generate a replay from a live stream that you are watching. There are a number of ways you could approach this, but Deja essentially sent the manifests it saw back to a server that, when a replay was requested, would attempt to fetch the relevant segments itself and stitch them together with [ffmpeg](https://ffmpeg.org/). 
+> This was something I did a bit of exploration on while building a toy project called [Deja](/projects#deja) which is a chrome extension that let's the user generate a replay from a live stream (assuming its using HLS) from the chrome extension or the Deja webapp. There are a number of ways you could approach this, but Deja essentially sent the manifests it saw in network traffic back to a server that, when a replay was requested, would attempt to fetch the relevant segments itself and stitch them together with [ffmpeg](https://ffmpeg.org/). 
 > 
-> Much like a lock pick set, it is not inherently illegal, but it can pretty easily be used by users to do some naughty things that violate the [DMCA](https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act). If you recall from the beginning, I don't really feel like dealing with all that hoopla. That is largely why I did it for fun, don't actively host it, and open source it in the hopes of being useful to someone else. (:man-shrugging:)
+> Much like a lock pick set, it is not inherently illegal, but it can pretty easily be used by users to do some naughty things that violate the [DMCA](https://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act). If you recall from the beginning, I don't really feel like dealing with all that hoopla. That is largely why I did it for fun, don't actively host it, and open source it in the hopes of being useful to someone else. 🤷‍♂️
 
-And this brings our lovely [yak-shaving](https://dev.to/dance2die/shaving-yak-4g2m) session to a close. Now we should all have a much better idea of how video streaming works. 
+### Why are the segments so short? How do you decide what length to use?
+
+> Ah so you remembered! If we think about it, on the other side of a live video stream there is a constant feed of video that is being chopped up, encoded and then uploaded to the origin server where our manifest can then include it for the client to fetch it. That means that if our segments are 30 seconds long, even if we ignore all of the intermediate steps, we will always be _at least_ 30 seconds behind the actual live event. So by reducing the size of those segments, we reduce the lowest possible delay between the initial recording and our player (commonly referred to as glass-to-glass in the industry). 
+> 
+> But why does Twitch stop at 2 seconds, why not go even lower? There are a lot of factors at play here, but we'll take a look at two main ones. 
+> 
+> The first is fairly simple, each request from the client for a segment has some overhead time cost, so shorter segments means more overhead time cost, thus hurting throughput and adding latency. You can see this relationship graphed below for persistent and non-persistent connections ([source](https://streaminglearningcenter.com/blogs/choosing-the-optimal-segment-duration.html)):
+>
+> <img src='https://jdhayford.io/images/segment-graph.png' alt='graph of throughput vs segment length'>
+> 
+> The second relates to how the length of a segment affects its compression and memory size (which also determines how much total data has to be transferred through a system for a stream). Video encoding largely accomplishes compression by recording the changes in the frames over time rather than every single frame. 
+> 
+> Take a very short video for example, 1 second long at 60 frames per second. It absolutely has to include the first frame as a full image (called the key frame, which takes much more memory), and the rest of the 59 frames can recreated based off the compressed deltas/changes. A 5 second video could be encoded using 1 key frame, and then the rest of the 299 frames can be recreated using the diffs. This might not seem like a big difference, but these things can really add up when you are constantly doing multiple live events, each replicated into different quality encodings, and serving those to a massive audience. 
+> 
+> So why not just do very long segments to sacrifice latency for a cheaper AWS bill at the end of the month? Well this goes back into encoding, but there are diminishing returns on compression for the length of a segment as keyframes are usually included anyway at an interval of a couple seconds in the video for quality/consistency reasons. Just remember that the longer the segment, the longer it takes for a client to download the very first segment and actually start the stream.
+> 
+> To wrap up, it depends on your priorities but it is generally accepted that 2-6 seconds is a good length to use for live content, and something like 6-10 seconds for on demand content.
+
+And this brings our lovely [yak-shaving](https://dev.to/dance2die/shaving-yak-4g2m) session to a close. I truly hope this brief journey has left the reader with some understanding, appreciation and curiousity of video streaming. Thanks for tagging along!
+
+> Note: It is also worth noting that we barely touched on the topic of video encoding / compression which is a fascinating and deep topic in its own right (and a potential future blog topic). For anyone looking to dive a little deeper, I cannot think of a better place to start than with https://github.com/leandromoreira/digital_video_introduction for everything from basic video terminology to video codecs, compression techniques, etc. Happy hunting :)

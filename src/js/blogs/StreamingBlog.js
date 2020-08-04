@@ -18,7 +18,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: stretch;
 
-    width: 100vw;
     min-height: calc(100vh - 7rem);
     background-color: ${Colors.BLUE_STEEL};
     box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
@@ -60,6 +59,10 @@ const ContentWrapper = styled.div`
 
     p {
       margin: 0.5rem 0;
+    }
+
+    p:not(:first-child) {
+      margin-top: 1rem;
     }
   }
 
