@@ -141,7 +141,7 @@ const Home = (props) => {
                     Hey there, I'm <MeSpan>Jack</MeSpan>.
                     <br />
                     <br />
-                    I like to create things, especially the things that I once couldn't.
+                    I am a fullstack developer and like to create things, especially the things that thought I couldn't.
                 </AvatarSubtitle>
               </Intro>
               <Links>
