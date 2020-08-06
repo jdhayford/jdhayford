@@ -40,6 +40,18 @@ module.exports = {
         ],
       },
       {
+        test: /\.(ttf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            exclude: /node_modules/,
+            options: {
+              name: 'fonts/[hash].[ext]',
+            },
+          },
+        ],
+      },
+      {
         test: /\.(m4a)$/,
         use: [
           {
