@@ -141,7 +141,7 @@ const Home = (props) => {
                     Hey there, I'm <MeSpan>Jack</MeSpan>.
                     <br />
                     <br />
-                    I am a fullstack developer and like creating novel things.
+                    I am a fullstack developer who likes to create novel things.
                 </AvatarSubtitle>
               </Intro>
               <Links>
