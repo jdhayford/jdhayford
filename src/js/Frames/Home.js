@@ -30,7 +30,7 @@ const Avatar = styled.img`
   height: 8rem;
   width: 8rem;
   object-fit: cover;
-  box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
+   
 `
 
 const AvatarSubtitle = styled.div`
@@ -102,6 +102,11 @@ const SocialIcon = styled.div`
   }
 `
 
+const WayLink = styled.a`
+  color: #f2fafe;
+  text-decoration-color: #736EFE;
+`;
+
 const Github = () => (
   <SocialIcon>
     <a href='https://github.com/jdhayford'>
@@ -141,7 +146,10 @@ const Home = (props) => {
                     Hey there, I'm <MeSpan>Jack</MeSpan>.
                     <br />
                     <br />
-                    I am a fullstack developer who likes to create novel things.
+                    I am a fullstack developer trying to create novel things.
+                    <br />
+                    <br />
+                    Currently building <WayLink href="https://wayscript.com">@WayScript</WayLink>
                 </AvatarSubtitle>
               </Intro>
               <Links>
