@@ -23,7 +23,7 @@ django-cors-headers==2.4.0
 django-extensions==2.1.2
 django-filters==0.2.1
 django-heroku==0.3.1
-djangorestframework==3.8.2
+djangorestframework==3.11.2
 entrypoints==0.2.3
 firebase-admin==2.15.1
 freezegun==0.3.10
