@@ -109,7 +109,7 @@ tornado==5.1.1
 traitlets==4.3.2
 tzlocal==1.5.1
 update-checker==0.16
-urllib3==1.23
+urllib3==1.26.5
 vine==1.1.4
 virtualenv==16.0.0
 wcwidth==0.1.7
