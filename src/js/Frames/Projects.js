@@ -18,6 +18,10 @@ const Wrapper = styled.div`
     @media only screen and (max-width: 900px) {
         max-width: 95%
     }
+
+    a {
+      color: ${Colors.MINT_GREEN};
+    }
 `
 
 const Row = styled.div`
@@ -135,6 +139,35 @@ const Project = (props) => {
             <Helmet>
               <title>Jack Hayford - Projects</title>
             </Helmet>
+            <ProjectSection>
+              <Demo>
+                <Looper src='https://www.jdhayford.io/videos/acid-demo.mp4'>
+                  Your browser does not support HTML5 Player.
+                </Looper>
+              </Demo>
+              <Description>
+                <Header>
+                  <a id='acid-tabs' href='https://chrome.google.com/webstore/detail/acid-tabs/hgceopemmcmigbmhphbcgkeffommpjfc'>
+                    Acid Tabs
+                  </a>
+                </Header>
+                <Info>
+                  Acid Tabs makes organizing tabs ridiculously easy by automatically grouping tabs together based on customizable rules.
+                  <br />
+                  <br />
+                  <div>
+                    I love Chrome's new Tab Groups feature but never enjoyed the tedious manual work of organizing tabs. I built Acid Tabs so I could be lazy again.
+                    <br />
+                    <br />
+                    The extension is open-sourced <a href="https://github.com/jdhayford/acid-tabs-extension">here</a>.
+                  </div>
+                </Info>
+                <Tools>
+                  <i className="devicon-react-original" alt='react'></i>
+                </Tools>
+              </Description>
+            </ProjectSection>
+
             <ProjectSection>
               <Demo>
                 <Looper src='https://www.jdhayford.io/videos/strumpad-demo.mp4'>
