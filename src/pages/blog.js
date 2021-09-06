@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import shortid from 'shortid'
 import ReactGA from 'react-ga'
 import styled from 'styled-components'
-import * as Colors from '../utils/Colors'
-import Link from '../utils/Link'
+import * as Colors from '../js/utils/Colors'
+import Link from '../js/utils/Link'
 import { Helmet } from 'react-helmet'
 
 const Wrapper = styled.div`

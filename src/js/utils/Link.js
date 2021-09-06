@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link'
+
 import styled from 'styled-components';
 
 
-const StyledLink = styled(NavLink)`
+const StyledLink = styled.a`
     text-decoration: none;
     color: inherit;
     &:focus, &:hover, &:visited, &:link, &:active {

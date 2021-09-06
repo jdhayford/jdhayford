@@ -1,12 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 
-import { createBrowserHistory } from 'history'
 import { applyMiddleware, compose, createStore } from 'redux'
-import { routerMiddleware } from 'connected-react-router'
 import thunk from 'redux-thunk'
 import reducer from './reducers'
-
-export const history = createBrowserHistory()
 
 // Redux devtools setup as per https://github.com/zalmoxisus/redux-devtools-extension#12-advanced-store-setup
 const composeEnhancers =
@@ -17,9 +13,9 @@ const composeEnhancers =
 
 export function createReduxStore(preloadedState) {
   const store = createStore(
-    reducer(history),
+    reducer,
     preloadedState,
-    composeEnhancers(applyMiddleware(routerMiddleware(history)), applyMiddleware(thunk)),
+    composeEnhancers(applyMiddleware(thunk)),
     // composeEnhancers(applyMiddleware(thunk)),
   )
   return store

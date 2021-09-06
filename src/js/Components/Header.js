@@ -1,8 +1,6 @@
 import React from 'react'
-import { withRouter } from 'react-router'
-// import { NavLink } from 'react-router-dom'
 import styled, { css } from 'styled-components'
-import { connect } from 'react-redux'
+import { useRouter } from 'next/router'
 import NavLink from '../utils/Link'
 
 import * as Colors from '../utils/Colors'
@@ -72,18 +70,19 @@ const Row = styled.div`
 `
 
 export const Header = (props) => {
-  const { pathname }  = props.location
+  const router = useRouter()
+  const { pathname }  = router
   return (
     <Wrapper>
       <HeaderWrapper>
         {/* <Logo src='https://www.jdhayford.io/images/jh-logo-2.png' /> */}
-        <Option exact to='/'>
+        <Option exact href='/'>
           Home
         </Option>
-        <Option selected={pathname === '/projects'} to='/projects'>
+        <Option selected={pathname === '/projects'} href='/projects'>
             Projects
         </Option>
-        <Option selected={pathname.startsWith('/blog')} to='/blog'>
+        <Option selected={pathname.startsWith('/blog')} href='/blog'>
             Blog
         </Option>
       </HeaderWrapper>
@@ -91,5 +90,12 @@ export const Header = (props) => {
   )
 }
 
-export default withRouter(Header)
+export const withHeader = (ChildComponent) => (
+  <>
+    <Header />
+    <ChildComponent />
+  </>
+)
+
+export default Header
 

@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import Main from '../js/Frames/Main'
 
-import GlobalCssStyles from '../utils/GlobalCssStyles'
-import { initializeDep } from '../utils/init'
-import { createReduxStore } from '../store'
-import Header from '../Components/Header'
+import GlobalCssStyles from '../js/utils/GlobalCssStyles'
+import { initializeDep } from '../js/utils/init'
+import { createReduxStore } from '../js/store'
 
 const store = createReduxStore()
 initializeDep()
 
 if (process.browser) window.store = store
-class MainFrame extends Component {
+class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Header />
-        {this.props?.children}
+        <Main />
         <GlobalCssStyles />
       </Provider>
     )
@@ -24,7 +23,7 @@ class MainFrame extends Component {
 }
 
 // if (process.browser) {
-//   ReactDOM.render(<MainFrame />, document.getElementById('root') || document.createElement('div'))
+//   ReactDOM.render(<App />, document.getElementById('root') || document.createElement('div'))
 // }
 
 if (module.hot && process.browser) {
@@ -36,4 +35,4 @@ if (module.hot && process.browser) {
   })
 }
 
-export default MainFrame
+export default App

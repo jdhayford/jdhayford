@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-import { connectRouter } from 'connected-react-router'
 import * as Actions from './actions'
 
 export const isSignedIn = (state = null, action) => {
@@ -22,9 +21,10 @@ export const currentUser = (state = null, action) => {
   }
 }
 
-export default (history) =>
+const reducers = (history) =>
   combineReducers({
-    router: connectRouter(history),
     isSignedIn,
     currentUser,
   })
+
+export default reducers

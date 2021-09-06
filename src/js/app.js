@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router'
-import { BrowserRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import ReactGA from 'react-ga'
 
-import { ConnectedRouter } from 'connected-react-router'
 import Main from './Frames/Main'
 import GlobalCssStyles from './utils/GlobalCssStyles'
 import { initializeDep } from './utils/init'
@@ -13,15 +10,12 @@ import { createReduxStore, history } from './store'
 
 const store = createReduxStore()
 initializeDep()
-
-window.store = store
+if (process.browser) window.store = store
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
-          <Main />
-        </BrowserRouter>
+        <Main />
         <GlobalCssStyles />
       </Provider>
     )

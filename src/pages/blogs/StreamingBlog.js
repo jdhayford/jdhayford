@@ -4,11 +4,12 @@ import ReactMarkdown from 'react-markdown'
 import { Helmet } from 'react-helmet'
 import styled, { css, keyframes } from 'styled-components'
 import { connect } from 'react-redux'
-import NavLink from '../utils/Link'
+import NavLink from '../js/utils/Link'
 import content from './streaming-blog.md'
 
 
 import * as Colors from '../utils/Colors'
+import { withHeader } from '../../js/Components/Header'
 
 const fadeIn = keyframes`
   from {
@@ -135,4 +136,4 @@ const Blog = (props) => {
   )
 }
 
-export default Blog
+export default withHeader(Blog)
