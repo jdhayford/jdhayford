@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
-import GlobalCssStyles from '../utils/GlobalCssStyles'
 import { initializeDep } from '../utils/init'
 import { createReduxStore } from '../store'
 import Header from '../Components/Header'
@@ -17,7 +16,6 @@ class MainFrame extends Component {
       <Provider store={store}>
         <Header />
         {this.props?.children}
-        <GlobalCssStyles />
       </Provider>
     )
   }

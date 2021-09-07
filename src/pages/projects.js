@@ -4,6 +4,12 @@ import ReactGA from 'react-ga'
 import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
 
+import AcidDemo from '../videos/acid-demo.mp4'
+import ArkadeDemo from '../videos/arkade-demo.mp4'
+import DejaDemo from '../videos/deja-demo.mp4'
+import FrakDemo from '../videos/frak-demo.mp4'
+import StreamThumb from '../videos/stream-thumb.mp4'
+import StrumpadDemo from '../videos/strumpad-demo.mp4'
 import * as Colors from '../js/utils/Colors'
 
 const Wrapper = styled.div`
@@ -130,112 +136,141 @@ const Tools = styled.div`
 
 
 const Project = (props) => {
-    return (
-        <Wrapper>
-            <Helmet>
-              <title>Jack Hayford - Projects</title>
-            </Helmet>
-            <ProjectSection>
-              <Demo>
-                <Looper src='https://www.jdhayford.io/videos/strumpad-demo.mp4'>
-                  Your browser does not support HTML5 Player.
-                </Looper>
-              </Demo>
-              <Description>
-                <Header>
-                  <a id='strumpad' href='https://strumpad.com'>
-                    Strumpad.com
-                  </a>
-                </Header>
-                <Info>
-                  Strumpad brings the theory, allowing guitarists to easily find chords and build chord progressions without having to know theory.
+  return (
+      <Wrapper>
+          <Helmet>
+            <title>Jack Hayford - Projects</title>
+          </Helmet>
+          <ProjectSection>
+            <Demo>
+              <Looper src={AcidDemo}>
+                Your browser does not support HTML5 Player.
+              </Looper>
+            </Demo>
+            <Description>
+              <Header>
+                <a id='acid-tabs' href='https://chrome.google.com/webstore/detail/acid-tabs/hgceopemmcmigbmhphbcgkeffommpjfc'>
+                  Acid Tabs
+                </a>
+              </Header>
+              <Info>
+                Acid Tabs makes organizing tabs ridiculously easy by automatically grouping tabs together based on customizable rules.
+                <br />
+                <br />
+                <div>
+                  I love Chrome's new Tab Groups feature, but using it manually can be very tedious. I built Acid Tabs so I could be lazy again.
                   <br />
                   <br />
-                  <div>
-                    I built Strumpad in an attempt to close the feedback loop between exploring and playing.
-                  </div>
-                </Info>
-                <Tools>
-                  <i className="devicon-react-original" alt='react'></i>
-                </Tools>
-              </Description>
-            </ProjectSection>
+                  The extension is open-sourced <a href="https://github.com/jdhayford/acid-tabs-extension">here</a>.
+                </div>
+              </Info>
+              <Tools>
+                <i className="devicon-react-original" alt='react'></i>
+              </Tools>
+            </Description>
+          </ProjectSection>
 
-            <ProjectSection>
-              <Demo>
-                <Image src='https://www.jdhayford.io/images/deja-demo.png' />
-              </Demo>
-              <Description>
-                <Header>
-                  <a id='deja' href='https://github.com/jdhayford/deja'>
-                    Deja
-                  </a>
-                </Header>
-                <Info>
-                  Deja is a chrome extension that lets you create "replays" from live streams (specifically HLS streams).
-                  <br />
-                  <br />
-                  <div>
-                    I mainly used this to learn HLS streaming and Go.
-                    One cool part about this approach was that you could grab a replay from your phone while watching the stream on the computer.
-                  </div>
-                </Info>
-                <Tools>
-                  <i className='devicon-go-plain' alt='golang'></i>
-                  <i className='devicon-react-original' alt='react'></i>
-                </Tools>
-              </Description>
-            </ProjectSection>
+          <ProjectSection>
+            <Demo>
+              <Looper src={StrumpadDemo}>
+                Your browser does not support HTML5 Player.
+              </Looper>
+            </Demo>
+            <Description>
+              <Header>
+                <a id='strumpad' href='https://strumpad.com'>
+                  Strumpad.com
+                </a>
+              </Header>
+              <Info>
+                Strumpad brings the theory, allowing guitarists to easily find chords and build chord progressions without having to know theory.
+                <br />
+                <br />
+                <div>
+                  I built Strumpad in an attempt to close the feedback loop between exploring and playing.
+                </div>
+              </Info>
+              <Tools>
+                <i className="devicon-react-original" alt='react'></i>
+              </Tools>
+            </Description>
+          </ProjectSection>
 
-            <ProjectSection>
-              <Demo>
-                <Looper src='https://www.jdhayford.io/videos/arkade-demo.mp4' />
-              </Demo>
-              <Description>
-                <Header>
-                  <a id='arkade' href='https://github.com/jdhayford/arkade'>
-                    Arkade
-                  </a>
-                </Header>
-                <Info>
-                  Arkade was a one-day POC for doing websocket-driven games using a main shared display.
-                  <br />
-                  <br />
-                  <div>
-                    You and another player could scan the main screen QR to join, then faceoff in a round of Rock, Paper, Scissors.
-                  </div>
-                </Info>
-                <Tools>
-                  <i className='devicon-react-plain' alt='javascript'></i>
-                </Tools>
-              </Description>
-            </ProjectSection>
+          <ProjectSection>
+            <Demo>
+              <Looper src={DejaDemo} />
+            </Demo>
+            <Description>
+              <Header>
+                <a id='deja' href='https://github.com/jdhayford/deja'>
+                  Deja
+                </a>
+              </Header>
+              <Info>
+                Deja is a chrome extension that lets you create "replays" from live streams (specifically HLS streams).
+                <br />
+                <br />
+                <div>
+                  I mainly used this to learn HLS streaming and Go.
+                  One cool part about this approach was that you could grab a replay from your phone while watching the stream on the computer.
+                </div>
+              </Info>
+              <Tools>
+                <i className='devicon-go-plain' alt='golang'></i>
+                <i className='devicon-react-original' alt='react'></i>
+              </Tools>
+            </Description>
+          </ProjectSection>
 
-            <ProjectSection>
-              <Demo>
-                <Looper src='https://www.jdhayford.io/images/frak-demo.mp4' />
-              </Demo>
-              <Description>
-                <Header>
-                  <a id='frak' href='https://github.com/jdhayford/frak'>
-                    Frak
-                  </a>
-                </Header>
-                <Info>
-                  Frak is a small POC extension I built while testing out the MediaStream Recording API.
-                  <br />
-                  <br />
-                  <div>
-                    You click a video element you want to record, then after you pause the video it prompts you to download the created video.
-                  </div>
-                </Info>
-                <Tools>
-                  <i className='devicon-javascript-plain' alt='javascript'></i>
-                </Tools>
-              </Description>
-            </ProjectSection>
-        </Wrapper>
-    )
+          <ProjectSection>
+            <Demo>
+              <Looper src={ArkadeDemo} />
+            </Demo>
+            <Description>
+              <Header>
+                <a id='arkade' href='https://github.com/jdhayford/arkade'>
+                  Arkade
+                </a>
+              </Header>
+              <Info>
+                Arkade was a one-day POC for doing websocket-driven games using a main shared display.
+                <br />
+                <br />
+                <div>
+                  You and another player could scan the main screen QR to join, then faceoff in a round of Rock, Paper, Scissors.
+                </div>
+              </Info>
+              <Tools>
+                <i className='devicon-react-plain' alt='javascript'></i>
+              </Tools>
+            </Description>
+          </ProjectSection>
+
+          <ProjectSection>
+            <Demo>
+              <Looper src={FrakDemo} />
+            </Demo>
+            <Description>
+              <Header>
+                <a id='frak' href='https://github.com/jdhayford/frak'>
+                  Frak
+                </a>
+              </Header>
+              <Info>
+                Frak is a small POC extension I built while testing out the MediaStream Recording API.
+                <br />
+                <br />
+                <div>
+                  You click a video element you want to record, then after you pause the video it prompts you to download the created video.
+                </div>
+              </Info>
+              <Tools>
+                <i className='devicon-javascript-plain' alt='javascript'></i>
+              </Tools>
+            </Description>
+          </ProjectSection>
+      </Wrapper>
+  )
 }
 
 export default Project

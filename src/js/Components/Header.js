@@ -51,7 +51,7 @@ const Option = styled(NavLink)`
     color: rgba(51, 51, 51, 0.64);
   }
 
-  &.active {
+  ${(props) => props.active && css`
     color: ${Colors.SNOW_WHITE};
     background: rgba(51,51,51,0.64);
     box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
@@ -60,8 +60,7 @@ const Option = styled(NavLink)`
       color: ${Colors.SNOW_WHITE};
       background-color: rgba(51, 51, 51, 0.54);
     }
-  }
-
+  `}
 `
 
 const Row = styled.div`
@@ -72,17 +71,18 @@ const Row = styled.div`
 export const Header = (props) => {
   const router = useRouter()
   const { pathname }  = router
+
   return (
     <Wrapper>
       <HeaderWrapper>
         {/* <Logo src='https://www.jdhayford.io/images/jh-logo-2.png' /> */}
-        <Option exact href='/'>
+        <Option active={pathname === '/'} exact href='/'>
           Home
         </Option>
-        <Option selected={pathname === '/projects'} href='/projects'>
+        <Option active={pathname === '/projects'} href='/projects'>
             Projects
         </Option>
-        <Option selected={pathname.startsWith('/blog')} href='/blog'>
+        <Option active={pathname.startsWith('/blog')} href='/blog'>
             Blog
         </Option>
       </HeaderWrapper>

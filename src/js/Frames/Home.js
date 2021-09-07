@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
 
 import { RIFF_VIOLET, DARK_SLATE } from '../utils/Colors'
-import Me from '../../images/me.png'
+import Me from '../../images/me.webp'
 import * as Colors from '../utils/Colors'
 
 const Wrapper = styled.div`

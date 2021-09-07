@@ -100,7 +100,6 @@ module.exports = {
       inject: false,
       template: htmlWebpackTemplate,
       appMountId: 'root',
-      favicon: './src/images/jh-fav.png',
       meta: [
         {
           name: 'viewport',

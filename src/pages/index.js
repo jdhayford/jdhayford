@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
 
 import { RIFF_VIOLET, DARK_SLATE } from '../js/utils/Colors'
-import Me from '../images/me.png'
+import Me from '../images/me.webp'
 import * as Colors from '../js/utils/Colors'
 
 const Wrapper = styled.div`
@@ -30,7 +30,7 @@ const Avatar = styled.img`
   height: 8rem;
   width: 8rem;
   object-fit: cover;
-  box-shadow: -2px -2px 8px rgba(231,231,231,0.2), 2px 2px 8px rgba(0,0,0,0.3);
+   
 `
 
 const AvatarSubtitle = styled.div`
@@ -77,7 +77,7 @@ const Intro = styled.div`
 const Links = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   align-self: flex-end;
 
   @media only screen and (max-width: 600px) {
@@ -101,6 +101,11 @@ const SocialIcon = styled.div`
     }
   }
 `
+
+const WayLink = styled.a`
+  color: #f2fafe;
+  text-decoration-color: #736EFE;
+`;
 
 const Github = () => (
   <SocialIcon>
@@ -126,7 +131,7 @@ const Twitter = () => (
   </SocialIcon>
 )
 
-function Home (props) {
+const Home = (props) => {
     return (
         <Wrapper>
             <Helmet>
@@ -141,7 +146,10 @@ function Home (props) {
                     Hey there, I'm <MeSpan>Jack</MeSpan>.
                     <br />
                     <br />
-                    I like to create things, especially the things that I couldn't.
+                    I am a fullstack developer trying to create novel things.
+                    <br />
+                    <br />
+                    Currently building <WayLink href="https://wayscript.com">@WayScript</WayLink>
                 </AvatarSubtitle>
               </Intro>
               <Links>
@@ -152,6 +160,6 @@ function Home (props) {
             </MainSection>
         </Wrapper>
     )
-  }
+}
 
 export default Home
