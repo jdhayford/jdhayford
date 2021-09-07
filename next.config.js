@@ -56,7 +56,7 @@ module.exports = withImages(withFonts({
         },
         {
           test: /\.(md)$/,
-          use: ['raw-loader'],
+          use: 'raw-loader',
         },
       ]
     )
