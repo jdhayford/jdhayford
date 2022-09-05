@@ -178,8 +178,7 @@ const Project = (props) => {
             </Demo>
             <Description>
               <Header>
-                Strumpad.com
-              </Header>
+                Strumpad              </Header>
               <Info>
                 Strumpad brings the theory, allowing guitarists to easily find chords and build chord progressions without having to know theory.
                 <br />
